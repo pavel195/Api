@@ -1,8 +1,15 @@
 from pydantic import BaseModel
-# Pydantic — это библиотека Python, предназначенная для
-# валидации данных и управления настройками с использованием аннотаций типов Python.
-# Она позволяет определять модели данных с помощью классов Python, которые автоматически
-# проверяют и преобразуют входные данные, обеспечивая их соответствие заданным типам и правилам.
+
 class Todo(BaseModel):
     id : int
     item : str
+
+class TodoItem(BaseModel):
+    item:str
+
+    class Config:
+        schema_extra = {
+            'example': {
+                'item' : "Read more books to become smarter!"
+            }
+        }
