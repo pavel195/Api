@@ -1,0 +1,68 @@
+{% extends "main.html" %} <!--базовый шаблон называется "main.html"-->
+
+{% block todo_container %}
+<main class="container">
+    <hr>
+
+    <!-- Форма для добавления новой задачи -->
+    <section class="container-fluid">
+        <form method="post"> <!-- Отправка данных формы методом POST -->
+            <div class="col-auto">
+                <div class="input-group mb-3">
+                    <!-- Поле ввода для описания задачи -->
+                    <input
+                        aria-describedby="button-addon2"
+                        aria-label="Add a todo"
+                        class="form-control"
+                        name="item"
+                        placeholder="Add ur activity"
+                        type="text"
+                        value="{{ item }}" <!-- Значение поля может быть предзаполнено переменной 'item' -->
+                    />
+                    <!-- Кнопка для отправки формы и добавления задачи -->
+                    <button
+                        class="btn btn-outline-primary"
+                        data-mdb-ripple-color="dark"
+                        id="button-addon2"
+                        type="submit">
+                        Add Todo
+                    </button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Условный блок: если отображается отдельная задача -->
+    {% if todo %}
+    <article class="card container-fluid">
+        <br/>
+        <!-- Отображение ID задачи -->
+        <h4>Todo ID: {{ todo.id }}</h4>
+        <p>
+            <strong>
+                <!-- Отображение описания задачи -->
+                Item: {{ todo.item }}
+            </strong>
+        </p>
+    </article>
+    {% else %}
+    <!-- Если отображается список всех задач -->
+    <section class="container-fluid">
+        <h2 class="text-center">Todos</h2>
+        <br>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <!-- Цикл по всем задачам в списке 'todos' -->
+                {% for todo in todos %}
+                <li class="list-group-item">
+                    {{ loop.index }}.
+                    <!-- Ссылка на страницу отдельной задачи по её ID -->
+                    <a href="/todo/{{ loop.index }}"> {{ todo.item }} </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    {% endif %}
+</main>
+{% endblock %}
