@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Установка кодировки документа -->
+    <meta charset="UTF-8">
+
+    <!-- Совместимость с Internet Explorer -->
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <!-- Настройка масштаба страницы для корректного отображения на мобильных устройствах -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Заголовок страницы, отображается во вкладке браузера -->
+    <title>Packt Todo Application</title>
+
+    <!-- Подключение Bootstrap CSS для стилизации и адаптивного дизайна -->
+    <link
+        crossorigin="anonymous"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        rel="stylesheet">
+
+    <!-- Подключение Font Awesome для использования иконок -->
+    <link
+        crossorigin="anonymous"
+        href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <nav class="navbar"> <!-- Исправлено: "navar" на "navbar" для корректного применения стилей Bootstrap -->
+            <div class="container-fluid">
+                <center>
+                    <!-- Заголовок приложения -->
+                    <h1>Packt Todo Application</h1>
+                </center>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Основной контейнер для контента страницы -->
+    <div class="container-fluid">
+        <!-- Блок для вставки контента из дочерних шаблонов -->
+        {% block todo_container %}{% endblock %}
+    </div>
+
+    <!-- Подключение необходимых JavaScript библиотек (опционально, если требуется) -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-csS5LIDYwxZ+UF/uRHGLPx+6ek6TjEl21KwpJPAeNtjd6Xd8xVYgZk3K78nN6YHC"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccJAIJYw2NJF3YODgVRsivX7PVsOHANogCjQKDB4CzFeDvL8e+TmVJn0M/GX"
+            crossorigin="anonymous"></script>
+    -->
+</body>
+</html>
